@@ -7,8 +7,8 @@
 
 <h2>Latest Rails twits</h2>
 <ul>
-	<%keyword.grab_tweets.each do |twit| %>
-		<li><%= "#{twit.user.screen_name}: #{twit.text}" %></li>
+	<% @keyword.grab_tweets.each do |twit| %>
+		<li><%= twit %></li>
 	<% end %>
 </ul>
 
