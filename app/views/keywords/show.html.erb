@@ -5,5 +5,12 @@
   <%= @keyword.word %>
 </p>
 
+<h2>Latest Rails twits</h2>
+<ul>
+	<%keyword.grab_tweets.each do |twit| %>
+		<li><%= "#{twit.user.screen_name}: #{twit.text}" %></li>
+	<% end %>
+</ul>
+
 <%= link_to 'Edit', edit_keyword_path(@keyword) %> |
 <%= link_to 'Back', keywords_path %>
