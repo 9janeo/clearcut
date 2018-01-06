@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104062147) do
+ActiveRecord::Schema.define(version: 20180106060718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,20 @@ ActiveRecord::Schema.define(version: 20180104062147) do
     t.string "word"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tweets", force: :cascade do |t|
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.string "user_id"
+    t.string "user_name"
+    t.string "user_screen_name"
+    t.string "user_image_url"
+    t.string "tweet_id"
+    t.datetime "tweet_created_at"
+    t.bigint "keyword_id"
+    t.datetime "updated_at", null: false
+    t.index ["keyword_id"], name: "index_tweets_on_keyword_id"
   end
 
 end
