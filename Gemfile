@@ -14,7 +14,8 @@ gem 'pg', '~> 0.18'
 gem 'twitter', '~> 5.16'
 gem 'newrelic_rpm'
 gem 'unicorn'
-gem "rack-timeout"
+gem 'rack-timeout'
+gem 'will_paginate'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

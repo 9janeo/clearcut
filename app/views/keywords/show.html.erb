@@ -10,7 +10,11 @@
 
 <h2>Latest <%= @keyword.word %> twits (<%= @keyword.tweets.count %>)</h2>
 <ul>
-	<% @keyword.tweets.each do |twit| %>
+	<% @twits.each do |twit| %>
 		<li> <img src="<%= twit.user_image_url %>" width="30px"> <%= twit.user_screen_name %>: <%= twit.text %></li>
 	<% end %>
 </ul>
+
+<div style="padding: 20px; border: solid 1px #eee; margin-bottom: 20px;">
+	<%= will_paginate @twits %>
+</div>
