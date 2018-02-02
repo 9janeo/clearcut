@@ -57,6 +57,7 @@ class KeywordsController < ApplicationController
   # DELETE /keywords/1.json
   def destroy
     @keyword.destroy
+    @keyword.clear_tweets if @keyword.destroyed?
     respond_to do |format|
       format.html { redirect_to keywords_url, notice: 'Keyword was successfully destroyed.' }
       format.json { head :no_content }

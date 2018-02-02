@@ -32,4 +32,10 @@ class Keyword < ApplicationRecord
 			keyword.grab_tweets
 		end
 	end
+
+	def clear_tweets
+		self.tweets.all.each do |twit|
+			twit.destroy		#code to fetch and destroy all keyword tweets
+		end
+	end
 end
