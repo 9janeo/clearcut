@@ -13,6 +13,8 @@ gem 'rails', '~> 5.1.4'
 gem 'pg', '~> 0.18'
 gem 'twitter', '~> 5.16'
 gem 'newrelic_rpm'
+gem 'unicorn'
+gem "rack-timeout"
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
