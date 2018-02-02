@@ -1,5 +1,5 @@
 class Keyword < ApplicationRecord
-	has_many :tweets
+	has_many :tweets, dependent: :destroy
 
 	def grab_tweets
 		client = Twitter::REST::Client.new do |config|
@@ -36,6 +36,14 @@ class Keyword < ApplicationRecord
 	def clear_tweets
 		self.tweets.all.each do |twit|
 			twit.destroy		#code to fetch and destroy all keyword tweets
+		end
+	end
+
+	def clear_dud_tweets
+		active_list = Keyword.all.map { |keyword| keyword.id }
+		duds = Tweet.all.where('keyword_id NOT IN (?)', active_list)
+		duds.each do |dud|
+			dud.destroy
 		end
 	end
 end
