@@ -17,7 +17,8 @@ gem 'unicorn'
 gem 'rack-timeout'
 gem 'will_paginate'
 gem 'carrierwave', '~> 0.11.2'
-gem "fog"
+#gem "fog"
+gem "fog-aws"
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
