@@ -1,5 +1,6 @@
 class Keyword < ApplicationRecord
 	has_many :tweets, dependent: :destroy
+	mount_uploader :image, ImageUploader
 
 	def grab_tweets
 		client = Twitter::REST::Client.new do |config|
