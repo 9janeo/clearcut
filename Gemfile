@@ -18,6 +18,7 @@ gem 'rack-timeout'
 gem 'will_paginate'
 gem 'carrierwave', '~> 0.11.2'
 gem "fog"
+gem 'mini_magick'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
