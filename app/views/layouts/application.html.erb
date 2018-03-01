@@ -3,15 +3,32 @@
   <head>
     <title>Clearcut</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
-  	<h1>Tweetersphere - V1</h1>
-  	<hr>
+    <nav class="navbar navbar-default" role="navigation" style="padding:10px">
+      <div class="navbar-left">
+        <h4 class="text-muted">Twittersphere</h4>
+      </div>
+      <div class="navbar-right">
+        <div style="float:right;">
+          <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content">
     	<%= yield %>
-    <hr>
-    <div style="text-align:center">Tweetersphere - A Vortex Component</div>
+    </div>
+    <div class="footer">
+      Tweetersphere - A Vortex Component
+    </div>
   </body>
 </html>
