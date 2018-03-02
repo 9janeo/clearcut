@@ -25,7 +25,7 @@ gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.7'
-#gem "asset_sync"
+gem "asset_sync"
 # Use Uglifier as compressor for JavaScript assets
 gem 'jquery-rails'
 gem 'uglifier', '>= 1.3.0'
