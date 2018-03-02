@@ -8,7 +8,7 @@ AssetSync.configure do |config|
   # config.existing_remote_files = 'keep'
   #
   # Increase upload performance by configuring your region
-  # config.fog_region = 'eu-west-1'
+  config.fog_region = 'ca-central-1'
   #
   # Change AWS signature version. Default is 4
   # config.aws_signature_version = 4
