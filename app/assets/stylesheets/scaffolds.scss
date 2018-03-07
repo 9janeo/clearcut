@@ -98,3 +98,54 @@ a.btn {
   width: 90%;
   margin: auto;
 }
+
+/* ALERT PAGE STYLES */
+.splash {
+  width: 100%;
+  background-color: purple;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  margin: 0 auto;
+  padding: 20%;
+  /* margin-bottom: 5%; */
+}
+
+.splash > section {
+  display: block;
+  position: relative;
+  max-width: 50%;
+  align-content: center;
+}
+
+.splash > .full-page-alert {
+  align-content: center;
+}
+
+.splash > .full-page-alert > .alert-text {
+  font-family: century-gothic, helvetica, arial;
+  text-align: center;
+  color: #fff !important;
+}
+
+.splash > .full-page-alert > .alert-image {
+  display: block;
+  margin: 0 auto;
+  -webkit-animation: mymove 5s infinite;
+  -webkit-animation-direction: alternate;
+  animation: mymove 5s infinite;
+  animation-direction: alternate;
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+  0% {-webkit-transform: rotate(135deg);}
+  50% {-webkit-transform: rotate(-135deg);}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+  0% {transform: rotate(135deg);}
+  50% {transform: rotate(-135deg);}
+}
