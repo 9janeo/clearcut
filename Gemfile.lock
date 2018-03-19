@@ -79,6 +79,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
+    dalli (2.7.6)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     equalizer (0.0.10)
@@ -272,6 +273,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   carrierwave (~> 0.11.2)
   coffee-rails (~> 4.2)
+  dalli
   fog-aws
   jbuilder (~> 2.5)
   jquery-rails
