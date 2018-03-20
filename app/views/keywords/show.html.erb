@@ -6,13 +6,15 @@
 <%= link_to 'Edit', edit_keyword_path(@keyword) %> |
 <%= link_to 'Back', keywords_path %>
 
-<h2>Latest <%= @keyword.word %> twits (<%= @keyword.tweets.count %>)</h2>
-<ul>
-	<% @twits.each do |twit| %>
-		<li> <img src="<%= twit.user_image_url %>" width="30px"> <%= twit.user_screen_name %>: <%= twit.text %></li>
-	<% end %>
-</ul>
+<% cache "keyword_show_id#{@keyword.id}_p#{params[:page]}", skip_digest: true, expires_in: 5.minutes do %>
+	<h2>Latest <%= @keyword.word %> twits (<%= @keyword.tweets.count %>)</h2>
+	<ul>
+		<% @twits.each do |twit| %>
+			<li> <img src="<%= twit.user_image_url %>" width="30px"> <%= twit.user_screen_name %>: <%= twit.text %></li>
+		<% end %>
+	</ul>
 
-<div style="padding: 20px; border: solid 1px #eee; margin-bottom: 20px;">
-	<%= will_paginate @twits %>
-</div>
+	<div style="padding: 20px; border: solid 1px #eee; margin-bottom: 20px;">
+		<%= will_paginate @twits %>
+	</div>
+<% end %>
