@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180208044953) do
+ActiveRecord::Schema.define(version: 20180320062735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20180208044953) do
     t.datetime "tweet_created_at"
     t.bigint "keyword_id"
     t.datetime "updated_at", null: false
+    t.index ["keyword_id", "created_at"], name: "index_tweets_on_keyword_id_and_created_at"
     t.index ["keyword_id"], name: "index_tweets_on_keyword_id"
   end
 
