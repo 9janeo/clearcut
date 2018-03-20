@@ -5,7 +5,7 @@
 <%= link_to 'New Keyword', new_keyword_path, class: "btn btn-primary", style: "float: right;" %>
 
 
-<% cache 'current_keywords_table', skip_digest: true do %>
+<%# cache 'current_keywords_table', skip_digest: true do %>
   <table class="table table-stripped">
     <thead>
       <tr>
@@ -28,5 +28,5 @@
       <% end %>
     </tbody>
   </table>
-<% end %>
+<%# end %>
 <br>
