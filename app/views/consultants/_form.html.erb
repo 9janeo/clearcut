@@ -1,0 +1,17 @@
+<%= form_with(model: consultant, local: true) do |form| %>
+  <% if consultant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(consultant.errors.count, "error") %> prohibited this consultant from being saved:</h2>
+
+      <ul>
+      <% consultant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

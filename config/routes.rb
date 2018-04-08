@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :services
   resources :keywords
 
   root 'keywords#index'
