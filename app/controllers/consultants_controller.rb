@@ -28,7 +28,7 @@ class ConsultantsController < ApplicationController
 
     respond_to do |format|
       if @consultant.save
-        format.html { redirect_to @consultant, notice: 'Consultant was successfully created.' }
+        format.html { redirect_to @consultant, notice: 'Consultant was successfully registered.' }
         format.json { render :show, status: :created, location: @consultant }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class ConsultantsController < ApplicationController
   def destroy
     @consultant.destroy
     respond_to do |format|
-      format.html { redirect_to consultants_url, notice: 'Consultant was successfully destroyed.' }
+      format.html { redirect_to consultants_url, notice: 'Consultant was successfully removed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class ConsultantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def consultant_params
-      params.fetch(:consultant, {})
+      params.require(:consultant).permit(:name, :email, :bio, :twitter_handle, :facebook_url, :instagram_handle)
     end
 end
