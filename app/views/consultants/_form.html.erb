@@ -11,37 +11,44 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :consultant_name %>
+  <div class="form-row">
+    <div class="field form-group col-md-6">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :consultant_name, class: 'form-control', placeholder: 'Tell us your name' %>
+    </div>
+
+    <div class="field form-group col-md-6">
+      <%= form.label :email %>
+      <%= form.text_field :email, id: :consultant_email, class: 'form-control', 'aria-describedby': 'emailHelp', placeholder: 'Please enter your email' %>
+      <small id="emailHelp" class="form-text text-muted">We won't share this</small>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :consultant_email %>
+  <div class="form-row">
+    <div class="field form-group col-md-12">
+      <%= form.label :bio %>
+      <%= form.text_area :bio, id: :consultant_bio, class: 'form-control', placeholder: 'Tell us more about you' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :bio %>
-    <%= form.text_area :bio, id: :consultant_bio %>
+  <div class="form-row">
+    <div class="field form-group col-md-4">
+      <%= form.label :twitter, class: 'col-form-label' %>
+      <%= form.text_field :twitter_handle, id: :consultant_twitter, class: 'form-control', placeholder: 'e.g. @clearcutmb' %>
+    </div>
+
+    <div class="field form-group col-md-4">
+      <%= form.label :facebook %>
+      <%= form.text_field :facebook_url, id: :consultant_facebook, class: 'form-control', placeholder: 'e.g. clearcutmb' %>
+    </div>
+
+    <div class="field form-group col-md-4">
+      <%= form.label :instagram %>
+      <%= form.text_field :instagram_handle, id: :consultant_instagram, class: 'form-control', placeholder: 'e.g. clearcutmb' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :twitter %>
-    <%= form.text_field :twitter_handle, id: :consultant_twitter %>
-  </div>
-
-  <div class="field">
-    <%= form.label :facebook %>
-    <%= form.text_field :facebook_url, id: :consultant_facebook %>
-  </div>
-
-  <div class="field">
-    <%= form.label :instagram %>
-    <%= form.text_field :instagram_handle, id: :consultant_instagram %>
-  </div>
-
-  <div class="actions">
+  <div class="actions form-group">
     <%= form.submit %>
   </div>
 <% end %>
