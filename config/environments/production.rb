@@ -17,6 +17,7 @@ Rails.application.configure do
   # Attempt to read encrypted secrets from `config/secrets.yml.enc`.
   # Requires an encryption key in `ENV["RAILS_MASTER_KEY"]` or
   # `config/secrets.yml.key`.
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
   config.read_encrypted_secrets = true
 
   # Disable serving static files from the `/public` folder by default since
@@ -34,6 +35,7 @@ Rails.application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
+  config.action_controller.asset_host = "d3og7kljxeh9uq.cloudfront.net"
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
@@ -56,6 +58,15 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
+  config.cache_store = :dalli_store,
+  (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+    {:username => ENV["MEMCACHIER_USERNAME"],
+     :password => ENV["MEMCACHIER_PASSWORD"],
+     :failover => true,
+     :socket_timeout => 1.5,
+     :socket_failure_delay => 0.2,
+     :down_retry_delay => 60
+    }
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
