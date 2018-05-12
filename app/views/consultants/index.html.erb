@@ -21,24 +21,28 @@
     </thead>
 
     <tbody>
-      <% @consultants.each do |consultant| %>
-        <tr>
-          <td>
-            <% if consultant.name? %>
-              <%= label_tag(consultant.name) %>
-            <% else %>
-              <%= label_tag(consultant.id) %>
-            <% end %>
-          </td>
-          <td><%= consultant.email %></td>
-          <td><%= consultant.bio %></td>
-          <td><%= consultant.twitter_handle %></td>
-          <td><%= consultant.facebook_url %></td>
-          <td><%= consultant.instagram_handle %></td>
-          <td><%= link_to 'Show', consultant, class: "btn btn-primary" %></td>          
-          <td><%= link_to 'Edit', edit_consultant_path(consultant), class: "btn btn-primary" %></td>
-          <td><%= link_to 'Destroy', consultant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %></td>
-        </tr>
+      <% if @consultants.blank? %>
+        <tr><td>No Consultants registered</td></tr>        
+      <% else %>
+        <% @consultants.each do |consultant| %>
+          <tr>
+            <td>
+              <% if consultant.name? %>
+                <%= label_tag(consultant.name) %>
+              <% else %>
+                <%= label_tag(consultant.id) %>
+              <% end %>
+            </td>
+            <td><%= consultant.email %></td>
+            <td><%= consultant.bio %></td>
+            <td><%= consultant.twitter_handle %></td>
+            <td><%= consultant.facebook_url %></td>
+            <td><%= consultant.instagram_handle %></td>
+            <td><%= link_to 'Show', consultant, class: "btn btn-primary" %></td>          
+            <td><%= link_to 'Edit', edit_consultant_path(consultant), class: "btn btn-primary" %></td>
+            <td><%= link_to 'Destroy', consultant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %></td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>
