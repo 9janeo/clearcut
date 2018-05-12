@@ -22,6 +22,8 @@
 
     <tbody>
       <% if @consultants.blank? %>
+        <tr><td>No Consultants registered</td></tr>        
+      <% else %>
         <% @consultants.each do |consultant| %>
           <tr>
             <td>
@@ -41,8 +43,6 @@
             <td><%= link_to 'Destroy', consultant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %></td>
           </tr>
         <% end %>
-      <% else %>
-        <tr><td>No Consultants registered</td></tr>
       <% end %>
     </tbody>
   </table>
