@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-05-11
+  ordername: MyString
+  ordernumber: 1
+  complete: false
+  servicelist: MyText
+
+two:
+  date: 2018-05-11
+  ordername: MyString
+  ordernumber: 1
+  complete: false
+  servicelist: MyText

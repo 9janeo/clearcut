@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 	root 'keywords#index'
   
+	  resources :orders
 	  resources :consultants
 	  resources :services
 	  resources :keywords
