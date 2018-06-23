@@ -87,6 +87,9 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  # Required for Devise. Remember to change localhost to actual application host
+  config.action_mailer.default_url_options = { host: 'clearcutcomms.herokuapp.com' }
+
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')

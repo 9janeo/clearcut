@@ -1,5 +1,6 @@
 class KeywordsController < ApplicationController
   before_action :set_keyword, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /keywords
   # GET /keywords.json
@@ -16,7 +17,7 @@ class KeywordsController < ApplicationController
 
   # GET /keywords/new
   def new
-    @keyword = Keyword.new
+    @keyword = current_user.keywords.build
   end
 
   # GET /keywords/1/edit
@@ -26,7 +27,7 @@ class KeywordsController < ApplicationController
   # POST /keywords
   # POST /keywords.json
   def create
-    @keyword = Keyword.new(keyword_params)
+    @keyword = current_user.keywords.build(keyword_params)
 
     respond_to do |format|
       if @keyword.save

@@ -1,4 +1,5 @@
 class Keyword < ApplicationRecord
+	belongs_to :user
 	has_many :tweets, dependent: :destroy
 	mount_uploader :image, ImageUploader
 
