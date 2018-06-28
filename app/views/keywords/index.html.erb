@@ -20,7 +20,7 @@
         <tr>
           <td><%= image_tag(keyword.image.thumb.url) if keyword.image? %></td>
           <td><%= keyword.word %></td>
-          <td><%= keyword.user_id.blank? ? 'None' : keyword.user.email %></td>
+          <td><%= keyword.user_id.blank? ? 'None' : keyword.user.name %></td>
           <td><%= keyword.tweets.count %></td>
           <td><%= link_to 'Show', keyword, class: "btn btn-primary" %></td>
           <% if (user_signed_in?) && (keyword.user == current_user)  %>
