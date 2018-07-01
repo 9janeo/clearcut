@@ -3,6 +3,7 @@
 <%= link_to 'New Keyword', new_keyword_path, class: "btn btn-primary", style: "float: right;" %>
 
 
+<div class="table-responsive">
 <% cache 'current_keywords_table', skip_digest: true do %>
   <table class="table table-stripped">
     <thead>
@@ -19,7 +20,7 @@
         <tr>
           <td><%= image_tag(keyword.image.thumb.url) if keyword.image? %></td>
           <td><%= keyword.word %></td>
-          <td><%= keyword.user_id.blank? ? 'None' : keyword.user.email %></td>
+          <td><%= keyword.user_id.blank? ? 'None' : keyword.user.name %></td>
           <td><%= keyword.tweets.count %></td>
           <td><%= link_to 'Show', keyword, class: "btn btn-primary" %></td>
           <% if (user_signed_in?) && (keyword.user == current_user)  %>
@@ -31,4 +32,5 @@
     </tbody>
   </table>
 <% end %>
+</div>
 <br>
