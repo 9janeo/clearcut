@@ -28,7 +28,7 @@ var Order = createReactClass({
 							<a className="btn btn-danger" href={order.id}>Delete</a>
 						</td>
 					</tr>
-			</tbody>
+				</tbody>
 			</table>
 		)
 	}

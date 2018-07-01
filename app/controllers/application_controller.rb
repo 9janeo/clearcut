@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
 
+  rescue_from Rack::Timeout::RequestTimeoutException do |exception|
+	  # do something
+	  @timeout_reason = exception
+	end
 end

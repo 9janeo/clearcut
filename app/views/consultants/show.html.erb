@@ -22,14 +22,18 @@
     	<%= @consultant.email %>
     </span>
     <br/>
+    <%= label_tag('Bio:')%>
     <span class="row"><%= @consultant.bio %></span>
     <br/>
+    <%= label_tag('Twitter:')%>
     <span class="row"><%= @consultant.twitter_handle %></span>
     <br/>
+    <%= label_tag('Facebook:')%>
     <span class="row"><%= @consultant.facebook_url %></span>
-    <br\>
+    <br/>
+    <%= label_tag('Instagram:')%>
     <span class="row"><%= @consultant.instagram_handle %></span>
-    <br\>
+    <br/>
     <%= link_to 'Show', @consultant, class: "btn btn-primary" %>
     <%= link_to 'Edit', edit_consultant_path(@consultant), class: "btn btn-primary" %>
     <%= link_to 'Destroy', @consultant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
