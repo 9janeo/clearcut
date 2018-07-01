@@ -4,11 +4,11 @@ class OrdersController < ApplicationController
 	end
 
 	def new
-		@order = current_user.order.build
+		@order = current_user.orders.build
 	end
 
 	def create
-    @order = current_user.order.build(order_params)
+    @order = current_user.orders.build(order_params)
 
     respond_to do |format|
       if @order.save

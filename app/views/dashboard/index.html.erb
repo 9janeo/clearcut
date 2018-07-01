@@ -4,6 +4,8 @@
 <p><%= @user.email %></p>
 
 <h2>Order</h2>
+	<%= react_component 'Orders', { data: @orders } %>
+	<br>
 	<table class="table table-stripped">
     <thead>
       <tr>
