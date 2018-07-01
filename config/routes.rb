@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
 
+
   devise_for :users
-	root 'keywords#index'
+	root 'dashboard#index'
   
+  	get 'dashboard/index'
 	  resources :orders
 	  resources :consultants
 	  resources :services
