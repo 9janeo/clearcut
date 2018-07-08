@@ -27,7 +27,7 @@ var OrderForm = createReactClass({
 					<input type='text' className='form-control' placeholder='ordername' name='ordername' value={state.ordername} onChange='handleValueChange' />
 					<input type='text' className='form-control' placeholder='servicelist' name='servicelist' value={state.date} onChange='handleValueChange' />
 					<input type='date' className='form-control' placeholder='updated_at' name='updated_at' value={state.date} onChange='handleValueChange' />				
-					<button type='submit' className="btn btn-primary" disabled={!valid()}>Create Lift</button>
+					<button type='submit' className="btn btn-primary" disabled={!valid()}>Create Order</button>
 					<span>
 						<a className="btn btn-primary" href={"orders/" + this.props.order.id}>View</a>
 					</span>

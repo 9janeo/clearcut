@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
 
 	def index
 		@orders = Order.all
+		#@user_orders = @user.orders
 	end
 
 	def new

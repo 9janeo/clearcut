@@ -4,34 +4,8 @@
 <p><%= @user.email %></p>
 
 <h2>Order</h2>
-	<%= react_component 'Orders', { data: @orders } %>
+	<%= react_component 'Orders', { data: @user_orders } %>
 	<br>
-	<table class="table table-stripped">
-    <thead>
-      <tr>
-        <th>Order Number</th>
-        <th>Type</th>
-        <th>Owner</th>
-        <th>Tweets</th>
-      </tr>
-    </thead>
-		
-		<tbody>
-			<% @user_orders.each do |order| %>
-				<tr>
-			    <td><%= image_tag(order.image.thumb.url) if order.image? %></td>
-			    <td><%= order.word %></td>
-			    <td><%= order.user_id.blank? ? 'None' : order.user.name %></td>
-			    <td><%= order.tweets.count %></td>
-			    <td><%= link_to 'Show', order, class: "btn btn-primary" %></td>
-			    <% if (user_signed_in?) && (order.user == current_user)  %>
-			      <td><%= link_to 'Edit', edit_order_path(order), class: "btn btn-success" %></td>
-			      <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-			    <% end %>          
-			  </tr>
-			<% end %>
-		</tbody>
-	</table>
 
 <h2>Keywords</h2>
 	<table class="table table-stripped">
