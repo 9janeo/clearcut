@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
 	before_action :set_order, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!, except: [:index, :show]
 	
 	def create
 		@order = Order.new(order_params)
@@ -39,6 +40,13 @@ class OrdersController < ApplicationController
 	end
 
 	def edit
+		if user_signed_in? 
+			set_order
+			# get params and  prepopulate edit form
+		else	
+			flash[:notice] = "Please sign in to edit an Order."
+			redirect_to sign_in_path
+		end
 	end
 
 	private

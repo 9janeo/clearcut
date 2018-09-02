@@ -16,14 +16,17 @@
   <div class="collapse navbar-collapse" id="app-nav">
 
     <ul class="nav nav-pills navbar-left">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
+      <li class="active nav-btn"><%= link_to "Home", dashboard_index_path, class: "nav-btn" %></li>
+      <li class="nav-btn"><%= link_to "Keywords", keywords_path, class: "nav-btn" %></li>
+      <li class="nav-btn"><%= link_to "Estimates", estimates_path, class: "nav-btn" %></li>
+      <li class="nav-btn"><%= link_to "Orders", orders_path, class: "nav-btn" %></li>
+      <li class="nav-btn"><%= link_to "Services", services_path, class: "nav-btn" %></li>
+      <li class="nav-btn"><a href="#">Contact</a></li>
     </ul>
     
     <ul class="nav nav-pills navbar-right">
       <% unless user_signed_in? %>
-        <li class=""><%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %></li>
+        <li><%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %></li>
         <li class=""><%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success" %></li>
       <% else %>
       <li class="dropdown">

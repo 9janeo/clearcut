@@ -30,7 +30,7 @@ var Orders = createReactClass({
 		// console.log(this.state.orders);
 		// console.log(this.props.data);
 		return (
-			<div className='orders'>
+			<div className='orders table-responsive'>
 				<h2 className='title'>List of orders</h2>
 				<table className="table table-stripped">
 					<thead>

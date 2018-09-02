@@ -1,6 +1,10 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
 
+  #belongs to order and/or estimate
+  #has different types Web, Social media, Writing and Editing, Visual content (has sub type, video, photo, graphic)
+  #has base price depending on type
+
   # GET /services
   # GET /services.json
   def index
