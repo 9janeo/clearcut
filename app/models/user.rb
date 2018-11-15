@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_and_belongs_to_many :roles
   has_many :keywords
   has_many :orders
+  has_many :estimates
 
   # Add account types for Consultants, Customer and Administrator and Creators
   

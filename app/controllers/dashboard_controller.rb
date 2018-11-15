@@ -7,7 +7,7 @@ class DashboardController < ApplicationController
   		@user_keywords = @user.keywords
   		#redirect_to keywords_path
   	else
-  		redirect_to login_path
+  		redirect_to new_user_session_url
   	end
   end
 
