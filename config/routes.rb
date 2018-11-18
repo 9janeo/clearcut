@@ -3,6 +3,11 @@ Rails.application.routes.draw do
 
 
   devise_for :users
+  post '/aws/auth',
+  	to: 'users#aws_auth',
+  	defaults: {format: 'json'},
+  	as: 'aws_auth'
+  	
 	root 'dashboard#index'
   
   	get 'dashboard/index'

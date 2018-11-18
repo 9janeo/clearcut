@@ -16,8 +16,11 @@
   <div class="collapse navbar-collapse" id="app-nav">
 
     <ul class="nav nav-pills navbar-left">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
+      <li class="active"><%= link_to "Home", dashboard_index_path %></li>
+      <li><%= link_to "About", dashboard_index_path %></li>
+      <li><%= link_to "Estimates", estimates_path %></li>
+      <li><%= link_to "Orders", orders_path %></li>
+      <li><%= link_to "Projects", dashboard_index_path %></li>
       <li><a href="#">Contact</a></li>
     </ul>
     

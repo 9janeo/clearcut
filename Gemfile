@@ -17,6 +17,7 @@ gem 'unicorn'
 gem 'rack-timeout'
 gem 'will_paginate'
 gem 'carrierwave', '~> 0.11.2'
+gem 'aws-sdk', '~> 3'
 # gem "fog"
 gem "fog-aws"
 gem 'mini_magick'
