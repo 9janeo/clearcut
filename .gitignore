@@ -18,8 +18,12 @@
 
 .byebug_history
 .basrc
+
+
 config/secrets.yml
 config/database.yml
+config/database.yml.example
+
 config/initializers/01_dev_config_vars.rb
 public/uploads
 personallogs
