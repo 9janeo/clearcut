@@ -17,6 +17,7 @@
 /yarn-error.log
 
 .byebug_history
+.basrc
 config/secrets.yml
 config/database.yml
 config/initializers/01_dev_config_vars.rb

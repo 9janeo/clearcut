@@ -1,35 +1,49 @@
-<% current_user = @user %>
+<% if current_user.blank? %>
+	<% current_user = @user %>
+	<% @estimates = current_user.estimates %>
+<% end %>
 <h1>Build your estimate</h1>
 <p>Get a quote for just services you need</p>
-
-<h2>Your Estimates</h2>
-<div class="form-group">
-	<%= form_for(@estimate) do |f| %>
-		<%= f.label :owner %>
-		<%= f.text_field :owner %><br />
-		<%= f.label :email %>
-		<%= f.text_field :email %><br />
-		<%= f.label :phone %>
-		<%= f.text_field :phone %><br />
-		<%= f.label :notes %>
-		<%= f.text_field :notes %><br />
-		<%= f.label :types %>
-		<%= f.check_box :type, {multiple: true}, 1, nil %><br />
-		<%= f.submit %>
+<p class="nav nav-pills navbar-right">
+	<% if user_signed_in? %>
+		<%= link_to 'New Estimate', new_estimate_url, class: "btn btn-success" %></p>
 	<% end %>
-</div>
 
 
-
-<% if @user.estimates.blank? %>
-	<p>You have not received any estimates yet</p>
-<% else %>
-	<h2>Projects</h2>
-
-	<%= @estimates.each do |e|
-		e.text_field :owner
-		e.text_field :email
-		e.text_field :phone
-		e.text_field :notes
-	end %>
+<% if @estimates.blank? %>
+	<p>You have not created any estimates yet</p>
+<% else %>	
+	<h2>Your Estimates</h2>
+	<table class="table table-stripped">
+		<thead>
+	    <tr>
+	    	<th>Created By</th>
+	      <th>Estimate Number</th>
+	      <th>Estimate Name</th>
+	      <th>Types</th>
+	      <th colspan="3">Controls</th>
+	    </tr>
+	  </thead>
+		
+		<tbody>
+			<% @estimates.each do |estimate| %>
+				<tr>
+			    <td>
+			    	<% "image_tag(estimate.image.thumb.url) if estimate.image?" %>
+			    	<%= estimate.user.name %>
+			    </td>
+			    <td><%= estimate.owner %></td>
+			    <td><%= estimate.user_id.blank? ? 'None' : estimate.user.name %></td>
+			    <td><%= estimate.ordernumber %></td>
+			    <td colspan="3">
+			    	<%= link_to 'Show', estimate, class: "btn btn-primary" %>
+				    <% if (user_signed_in?) && (estimate.user == current_user)  %>
+				      <%= link_to 'Edit', edit_order_path(estimate), class: "btn btn-success" %>
+				      <%= link_to 'Destroy', estimate, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+				    <% end %>
+				  </td>          
+			  </tr>
+			<% end %>
+		</tbody>
+	</table>
 <% end %>
