@@ -35,6 +35,24 @@
 		</tbody>
 	</table>
 
+	<section>
+		<div id="eyejee" class="banner">
+			<% unless @eyejee == nil %>
+			<h1>Instagram Lookup</h1>
+			  <% @eyejee.each do |popular| %>
+			  <div class="col-sm-12 col-md-4">
+			    <div class="thumbnail">
+			      <%= image_tag popular.images.low_resolution.url %>
+			      <div class="caption">
+			        <%= eyejee.user.username %>
+			      </div>
+			    </div>
+			  </div>
+			  <% end %>
+			<% end %>
+		</div>
+	</section>
+
 <h2>My Keywords</h2>
 	<table class="table table-stripped">
     <thead>
