@@ -10,4 +10,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
 
+  InstagramApi.config do |config|
+	  config.access_token = ENV["IG_APP_ACCESS_TOKEN"]
+	  config.client_id = ENV["IG_APP_CLIENT_ID"]
+	  config.client_secret = ENV["IG_APP_CLIENT_SECRET"]
+	end
+
 end
