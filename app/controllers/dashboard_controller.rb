@@ -11,10 +11,4 @@ class DashboardController < ApplicationController
   	end
   end
 
-  class HomeController < ApplicationController
-  def index
-    @eyejee = Instagram.media_popular
-  end
-end
-
 end
