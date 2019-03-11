@@ -11,4 +11,9 @@ class DashboardController < ApplicationController
   	end
   end
 
+  def eyejee
+    @IG_user = InstgramApi.user.show
+    @IG_user_comments = InstgramApi.user.recent_media
+  end
+
 end

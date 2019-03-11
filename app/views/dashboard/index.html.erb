@@ -36,10 +36,11 @@
 	</table>
 
 	<section>
+		<div><%= @IG_user %></div>
 		<div id="eyejee" class="banner">
 			<% unless @eyejee == nil %>
 			<h1>Instagram Lookup</h1>
-			  <% @eyejee.each do |popular| %>
+			  <%= @eyejee.each do |popular| %>
 			  <div class="col-sm-12 col-md-4">
 			    <div class="thumbnail">
 			      <%= image_tag popular.images.low_resolution.url %>
