@@ -18,12 +18,15 @@
 
 .byebug_history
 .basrc
+
+# Ignore config vars
+01_dev_config_vars.rb
 .01_dev_config_vars.rb
+config/initializers/01_dev_config_vars.rb
 
 config/secrets.yml
 config/database.yml
 config/database.yml.example
 
-config/initializers/01_dev_config_vars.rb
 public/uploads
 personallogs
