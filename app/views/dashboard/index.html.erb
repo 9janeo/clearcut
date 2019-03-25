@@ -35,25 +35,6 @@
 		</tbody>
 	</table>
 
-	<section>
-		<div><%= @IG_user %></div>
-		<div id="eyejee" class="banner">
-			<% unless @eyejee == nil %>
-			<h1>Instagram Lookup</h1>
-			  <%= @eyejee.each do |popular| %>
-			  <div class="col-sm-12 col-md-4">
-			    <div class="thumbnail">
-			      <%= image_tag popular.images.low_resolution.url %>
-			      <div class="caption">
-			        <%= eyejee.user.username %>
-			      </div>
-			    </div>
-			  </div>
-			  <% end %>
-			<% end %>
-		</div>
-	</section>
-
 <h2>My Keywords</h2>
 	<table class="table table-stripped">
     <thead>
@@ -81,3 +62,38 @@
 			<% end %>
 		</tbody>
 	</table>
+
+	<h2>Keywords</h2>
+
+<%= link_to 'New Keyword', new_keyword_path, class: "btn btn-primary", style: "float: right;" %>
+
+<section>
+<div class="table-responsive">
+	<% cache 'current_ig_table', skip_digest: true do %>
+	  <table class="table table-stripped">
+	    <thead>
+	      <tr>
+	        <th>IG User</th>
+	        <th>IG User Comments</th>	        
+	      </tr>
+	    </thead>
+
+	    <tbody>
+	      <% @user.eyejee do |eyejee| %>
+	        <tr>
+	          <td><%= image_tag(keyword.image.thumb.url) if keyword.image? %></td>
+	          <td><%= eyejee.word %></td>
+	          <td><%= keyword.user_id.blank? ? 'None' : keyword.user.name %></td>
+	          <td><%= keyword.tweets.count %></td>
+	          <td><%= link_to 'Show', keyword, class: "btn btn-primary" %></td>
+	          <% if (user_signed_in?) && (keyword.user == current_user)  %>
+	            <td><%= link_to 'Edit', edit_keyword_path(keyword), class: "btn btn-success" %></td>
+	            <td><%= link_to 'Destroy', keyword, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+	          <% end %>          
+	        </tr>
+	      <% end %>
+	    </tbody>
+	  </table>
+	<% end %>
+</div>
+</section>

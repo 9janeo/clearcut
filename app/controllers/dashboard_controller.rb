@@ -5,15 +5,12 @@ class DashboardController < ApplicationController
   		@user = current_user
   		@user_orders = @user.orders
   		@user_keywords = @user.keywords
+
+      @eyejee = current_user.eyejee
   		#redirect_to keywords_path
   	else
   		redirect_to new_user_session_url
   	end
-  end
-
-  def eyejee
-    @IG_user = InstgramApi.user.show
-    @IG_user_comments = InstgramApi.user.recent_media
   end
 
 end

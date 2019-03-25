@@ -8,6 +8,7 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
+*.log
 /log/*
 /tmp/*
 !/log/.keep
@@ -30,3 +31,4 @@ config/database.yml.example
 
 public/uploads
 personallogs
+
