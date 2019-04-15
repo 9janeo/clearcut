@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: ClearCutInsta
+  username: Eyejee
+  connected: true
+
+two:
+  name: MyString
+  username: MyString
+  connected: false

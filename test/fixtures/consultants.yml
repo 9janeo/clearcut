@@ -1,17 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  bio: MyText
-  email: MyString
-  twitter_handle: MyString
-  facebook_url: MyString
-  instagram_handle: MyString
-
-two:
-  name: MyString
-  bio: MyText
-  email: MyString
-  twitter_handle: MyString
-  facebook_url: MyString
-  instagram_handle: MyString
+  name: Neo
+  bio: The best to ever do it, no proof offered
+  email: neonation@niyiadewole.ca
+  twitter_handle: 9janeo
+  facebook_url: facebook.com/page/clear-cut
+  instagram_handle: NeoAdewole
