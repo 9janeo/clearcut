@@ -2,6 +2,12 @@ class Users::PasswordsController < Devise::PasswordsController
 
   skip_before_action :assert_reset_token_passed
 
+  resources :users do
+    member do
+      get :confirm_email
+    end
+  end
+
   def create
 
     raise ArgumentError, "Unexpected block given for requested action: #{params.inspect}" if block_given?

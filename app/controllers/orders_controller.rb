@@ -25,6 +25,7 @@ class OrdersController < ApplicationController
         #@order.grab_tweets
         format.html { redirect_to @order, notice: 'Keyword was successfully created.' }
         format.json { render :show, status: :created, location: @order }
+        
       else
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
