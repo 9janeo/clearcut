@@ -45,7 +45,7 @@ Rails.application.configure do
   config.assets.debug = false
 
   # Required for Devise gem
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true

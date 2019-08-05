@@ -6,7 +6,6 @@ class UserController < ApplicationController
   # (...)
 
   def aws_auth
-
     defaults = {
       id: nil,
       first_name: nil,
@@ -29,7 +28,6 @@ class UserController < ApplicationController
     respond_to do |format|
       format.json { render json: answer }
     end
-
   end
 
   # (...)
