@@ -25,7 +25,7 @@ gem 'mini_magick'
 gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem "asset_sync"
 gem 'dalli'
 # Use Uglifier as compressor for JavaScript assets
