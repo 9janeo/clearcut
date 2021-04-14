@@ -1,9 +1,18 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
 
   # skip_filter other access restrictions...
-  before_filter :restrict_access, only: [:aws_auth]
+  before_action :restrict_access, only: [:aws_auth]
 
   # (...)
+
+  # def show
+  #   @user = User.find(params[:id])
+  #   render json: @user, status: :ok
+  # rescue ActiveRecord::RecordNotFound => e
+  #   render json: {
+  #     error: e.to_s
+  #   }, status: :not_found
+  # end
 
   def aws_auth
     defaults = {
@@ -24,6 +33,8 @@ class UserController < ApplicationController
       answer[:success] = false
       answer[:user_exists] = false
     end
+
+    rescue ActiveRecord::RecordNotFound => e
 
     respond_to do |format|
       format.json { render json: answer }
